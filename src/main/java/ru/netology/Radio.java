@@ -9,7 +9,7 @@ public class Radio {
 
     public void setNumberOfStation(int newNumberOfStation) {
 
-        if (numberOfStation > 9) {
+        if (newNumberOfStation > 9) {
             return;
         }
         numberOfStation = newNumberOfStation;
