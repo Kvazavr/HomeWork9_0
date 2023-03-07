@@ -151,6 +151,7 @@ public class RadioTest {
         for (int i = 0; i < 99; i++) {
             radio.increaseVolume();
         }
+        Assertions.assertEquals(99, radio.getCurrentVolume());
         radio.increaseVolume();
         int expected = 100;
         int actual = radio.getCurrentVolume();
@@ -172,6 +173,7 @@ public class RadioTest {
         for (int i = 0; i < 100; i++) {
             radio.increaseVolume();
         }
+        Assertions.assertEquals(100, radio.getCurrentVolume());
         radio.increaseVolume();
         int expected = 100;
         int actual = radio.getCurrentVolume();
@@ -184,6 +186,7 @@ public class RadioTest {
         for (int i = 0; i < 68; i++) {
             radio.increaseVolume();
         }
+        Assertions.assertEquals(68, radio.getCurrentVolume());
         radio.decreaseVolume();
         int expected = 67;
         int actual = radio.getCurrentVolume();
@@ -196,6 +199,7 @@ public class RadioTest {
         for (int i = 0; i < 100; i++) {
             radio.increaseVolume();
         }
+        Assertions.assertEquals(100, radio.getCurrentVolume());
         radio.decreaseVolume();
         int expected = 99;
         int actual = radio.getCurrentVolume();
@@ -205,9 +209,7 @@ public class RadioTest {
     @Test
     public void testDecreaseVolumeLowBoundary() {
         Radio radio = new Radio();
-        for (int i = 0; i < 1; i++) {
-            radio.increaseVolume();
-        }
+        radio.increaseVolume();
         radio.decreaseVolume();
         int expected = 0;
         int actual = radio.getCurrentVolume();
