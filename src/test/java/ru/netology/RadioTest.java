@@ -5,6 +5,24 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
     @Test
+    public void setStationCountMoreThanDefault() {
+        Radio radio = new Radio(23);
+        radio.setNumberOfStation(11);
+        int expected = 11;
+        int actual = radio.getNumberOfStation();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void stationCountMoreThanDefaultAcrossBoundary() {
+        Radio radio = new Radio(12);
+        radio.setNumberOfStation(11);
+        radio.next();
+        int expected = 0;
+        int actual = radio.getNumberOfStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void setNumberOfStationWithValidValue() {
         Radio radio = new Radio();
         Assertions.assertEquals(0, radio.getNumberOfStation());
