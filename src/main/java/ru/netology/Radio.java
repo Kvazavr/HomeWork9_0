@@ -2,10 +2,17 @@ package ru.netology;
 
 public class Radio {
     private int numberOfStation;
-    private int stationCount = 10;
+    private int stationCount;
     private int currentVolume;
     private int maxVolume = 100;
     private int minVolume = 0;
+
+    public Radio(int stationCount) {
+        this.stationCount = stationCount;
+    }
+    public Radio() {
+        this.stationCount = 10;
+    }
 
     public void setNumberOfStation(int newNumberOfStation) {
 
